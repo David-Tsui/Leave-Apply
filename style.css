@@ -1,0 +1,37 @@
+body {
+	background: url('patterns/symphony.png');
+	font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "微軟正黑體", "Microsoft JhengHei", "標楷體", sans-serif;
+}
+
+button {
+	font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "微軟正黑體", "Microsoft JhengHei", "標楷體", sans-serif;
+}
+
+.container {
+	/*min-width: 400px;*/
+	/*max-width: 800px;*/
+	margin: auto;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	/*flex*/
+	display: flex;
+	flex-direction: column;
+}
+
+#calendar {
+	width: 90%;
+	margin: auto;
+}
+
+.fc th, .fc td {
+	border-color: #000;
+} 
+
+.fc-unthemed .fc-today {
+  background: #F0E891;
+}
+
+.invalid {
+	background-color: #F56060;
+}
