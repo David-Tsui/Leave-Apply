@@ -1,4 +1,8 @@
-$(document).ready(function(){
+$(document).ready(function() {
+	var body_height = $("body").height();
+	$(".loaderBox").css("height", (body_height - 128)).show();
+	console.log("height: " + body_height);
+
 	var currentLangCode = 'zh-tw';
 	//currentLangCode = "en";
 	var json_data = [];
@@ -31,10 +35,11 @@ $(document).ready(function(){
 		"lunch_time": 1
 	};
 	
-	$.getJSON(
-		'https://spreadsheets.google.com/feeds/list/1TDm8enoDYHh6NL7gB-DNC6NL2R1Du9-I4FFPV_nDCP4/1/public/values?alt=json-in-script&callback=?', function(json){
-		var data = json.feed.entry;
-		data_len = data.length;
+	var holiday_url = 'https://spreadsheets.google.com/feeds/list/1TDm8enoDYHh6NL7gB-DNC6NL2R1Du9-I4FFPV_nDCP4/1/public/values?alt=json-in-script&callback=?';
+	var leave_url = 'https://spreadsheets.google.com/feeds/list/1vJ3e1C0p0Vk6vZrcJuCjPwIPHlXgyZ4SQJD_8CfpRRE/1/public/values?alt=json-in-script&callback=?';
+	$.when($.getJSON(holiday_url), $.getJSON(leave_url)).done(function(response1, response2) {
+		var data = response1[0].feed.entry;
+		var data_len = data.length;
 		for(var i = 0; i < data_len; i++) {
 			var entry = data[i];
 			date = entry.gsx$日期.$t;
@@ -47,13 +52,10 @@ $(document).ready(function(){
 			obj = new make_obj_holiday(title, true, date);
 			json_data.push(obj);
 		}
-	});
-
-	$.getJSON(
-		'https://spreadsheets.google.com/feeds/list/1vJ3e1C0p0Vk6vZrcJuCjPwIPHlXgyZ4SQJD_8CfpRRE/1/public/values?alt=json-in-script&callback=?', function(json){
-		var data = json.feed.entry;
+		console.log(data);
+		data = response2[0].feed.entry;
 		data_len = data.length;
-		html = "";
+		console.log(data);
 		for(var i = 0; i < data_len; i++) {
 			var entry = data[i];
 			dealer        = entry.gsx$經銷商別.$t;
@@ -69,6 +71,7 @@ $(document).ready(function(){
 			cannot_reason = entry.gsx$未核准原因.$t;
 			substitute    = entry.gsx$代理人員.$t;
 
+			(factory == "總公司支援組") ? factory = "支援組" : factory;
 			var isAgree = false;
 			var OK_words_len = OK_words.length;
 			for(var j = 0; j < OK_words_len; j++){
@@ -104,7 +107,8 @@ $(document).ready(function(){
 			);
 			json_data.push(obj);
 		}
-	}).done(function(){
+		console.log("A");
+		//$(".loaderBox").delay(1500).fadeOut(function(){$(".main").show();});
 		$('#calendar').fullCalendar({
 			header: {
 				left: 'prev,next today',
@@ -115,14 +119,13 @@ $(document).ready(function(){
 			buttonIcons: true, // show the prev/next text
 			editable: true,
 			//eventLimit: true, // allow "more" link when too many events
-		  events: json_data,
+		  events: json_data
 		});
-
+		console.log("B")
+		
 		$('#my-today-button').click(function(){
 		  $('#calendar').fullCalendar('today');
 		});
-	}).fail(function(){
-		console.log("fail");
 	});
 });
 
@@ -139,16 +142,17 @@ function make_obj_back(title, isallDay, start) {
 	this.allDay = isallDay;
 	this.start = start;
 	this.rendering = 'background';
-	this.color = "#ff9f89";
+	// this.color = "#ef5350";
+	this.color = "#ff4081";
 }
 
 function make_obj_holiday(title, isallDay, start) {
 	this.title = title;
 	this.allDay = isallDay;
 	this.start = start;
-	this.color = "rgba(252, 251, 178, 0.82)";
+	this.color = "rgb(255,215,64)";
 	this.textColor = "#000";
-	this.className
+	//this.className
 }
 
 function generateDate(origin_date){

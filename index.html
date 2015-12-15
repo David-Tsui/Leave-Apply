@@ -2,27 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Flex practice</title>
+	<title>職員請假日曆</title>
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-blue.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<link href="fullcalendar/fullcalendar.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
-	<script src='fullcalendar/lib/jquery.min.js'></script>
-	<script src="calendar_algorithm.js"></script>
+	<!--<script src='fullcalendar/lib/jquery.min.js'></script>-->
 </head>
 <body>
 	<div class="container">
-		<h1>職員請假情形</h1>
-		<div>
-			<a href="https://docs.google.com/spreadsheets/d/1vJ3e1C0p0Vk6vZrcJuCjPwIPHlXgyZ4SQJD_8CfpRRE/edit#gid=1364004237" target="_blank">
-				<button>前往試算表</button>
+		<h3>職員請假情形</h3>
+		<div class="main">
+			<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://docs.google.com/spreadsheets/d/1vJ3e1C0p0Vk6vZrcJuCjPwIPHlXgyZ4SQJD_8CfpRRE/edit#gid=1364004237" target="_blank">
+				前往試算表
 			</a>
-			<button id="my-today-button">回到今天</button>
+			<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="my-today-button">回到今天</a>
+			<div id="calendar"></div>
 		</div>
-		<br>
-		<div id="calendar"></div>
 	</div>
 
+	<script src="fullcalendar/lib/jquery.min.js"></script> 
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 	<script src='fullcalendar/lib/moment.min.js'></script>
 	<script src="fullcalendar/fullcalendar.js"></script>
 	<script src='fullcalendar/lang-all.js'></script>
+	<script src="calendar_algorithm.js"></script>
 </body>
 </html>
