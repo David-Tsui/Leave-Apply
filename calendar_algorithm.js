@@ -57,7 +57,7 @@ $(document).ready(function() {
 		data_len = data.length;
 		console.log(data);
 		for(var i = 0; i < data_len; i++) {
-			var entry = data[i];
+			var entry = data[i],
 			dealer        = entry.gsx$經銷商別.$t;
 			factory       = entry.gsx$廠別.$t;
 			title         = entry.gsx$職稱.$t;
@@ -100,7 +100,7 @@ $(document).ready(function() {
 			if (type == "事假" && isSaturday) 
 				flag = false;
 			var obj = new make_obj(
-				"\r\n" + dealer + " " + type + "\r\n" + factory + " " + title + " " + name + "\r\n代理人員：" + substitute,
+				"\r\n" + dealer + "\r\n" + factory + "\r\n" + type + "\r\n" + title + "\r\n" + name + "\r\n\r\n代理人員： \r\n" + substitute,
 				start_date,
 				end_date,
 				flag

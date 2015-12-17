@@ -2,26 +2,42 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>職員請假日曆</title>
+	<title>員工請假紀錄</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
 	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-blue.min.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
-	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<link href="fullcalendar/fullcalendar.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
-	<!--<script src='fullcalendar/lib/jquery.min.js'></script>-->
 </head>
 <body>
-	<div class="container">
-		<h3>職員請假情形</h3>
-		<div class="main">
-			<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://docs.google.com/spreadsheets/d/1vJ3e1C0p0Vk6vZrcJuCjPwIPHlXgyZ4SQJD_8CfpRRE/edit#gid=1364004237" target="_blank">
-				前往試算表
-			</a>
-			<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="my-today-button">回到今天</a>
+	<div class="ui stackable grid container" style="text-align: center">
+		<div class="three column row">
+			<div class="column">
+				<div class="ui small image">
+					<img src="images/logo.png" alt="image not found">
+				</div>
+			</div>
+			<div class="column">
+				<h1 class="ui header">員工請假紀錄</h1>
+				<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://docs.google.com/spreadsheets/d/1vJ3e1C0p0Vk6vZrcJuCjPwIPHlXgyZ4SQJD_8CfpRRE/edit#gid=1364004237" target="_blank">
+					前往試算表
+				</a>
+				<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="my-today-button">回到今天</a>
+			</div>
+			<div class="column">
+				<div class="ui medium image">
+					<img src="images/車益Logo.png" alt="image not found">
+				</div>
+			</div>
+		</div>
+		<div class="main row">
 			<div id="calendar"></div>
 		</div>
-	</div>
+	</div>	
+	
 
 	<script src="fullcalendar/lib/jquery.min.js"></script> 
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>

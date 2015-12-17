@@ -1,17 +1,5 @@
 body {
-	/*background: -webkit-linear-gradient(bottom left, hsla(200, 68%, 46%, 1) 0%, hsla(200, 68%, 46%, 0) 70%), 
-	-webkit-linear-gradient(top left, hsla(134, 100%, 82%, 1) 10%, hsla(134, 100%, 82%, 0) 80%),
-	-webkit-linear-gradient(top right, hsla(196, 85%, 72%, 1) 10%, hsla(196, 85%, 72%, 0) 80%),
-	-webkit-linear-gradient(bottom right, hsla(269, 99%, 60%, 1) 100%, hsla(269, 99%, 60%, 0) 70%);
-	background: -o-linear-gradient(bottom left, hsla(200, 68%, 46%, 1) 0%, hsla(200, 68%, 46%, 0) 70%), 
-	-o-linear-gradient(top left, hsla(134, 100%, 82%, 1) 10%, hsla(134, 100%, 82%, 0) 80%),
-	-o-linear-gradient(top right, hsla(196, 85%, 72%, 1) 10%, hsla(196, 85%, 72%, 0) 80%),
-	-o-linear-gradient(bottom right, hsla(269, 99%, 60%, 1) 100%, hsla(269, 99%, 60%, 0) 70%);
-	background: linear-gradient(to top right, hsla(200, 68%, 46%, 1) 0%, hsla(200, 68%, 46%, 0) 70%), 
-	linear-gradient(to bottom right, hsla(134, 100%, 82%, 1) 10%, hsla(134, 100%, 82%, 0) 80%),
-	linear-gradient(to bottom left, hsla(196, 85%, 72%, 1) 10%, hsla(196, 85%, 72%, 0) 80%),
-	linear-gradient(to top left, hsla(269, 99%, 60%, 1) 100%, hsla(269, 99%, 60%, 0) 70%);*/
-	background: -webkit-linear-gradient(bottom left, hsla(224, 82%, 100%, 1) 0%, hsla(224, 82%, 100%, 0) 70%), 
+	/*background: -webkit-linear-gradient(bottom left, hsla(224, 82%, 100%, 1) 0%, hsla(224, 82%, 100%, 0) 70%), 
 	-webkit-linear-gradient(top left, hsla(225, 80%, 96%, 1) 10%, hsla(225, 80%, 96%, 0) 80%), 
 	-webkit-linear-gradient(top right, hsla(213, 82%, 87%, 1) 10%, hsla(213, 82%, 87%, 0) 80%), 
 	-webkit-linear-gradient(bottom right, hsla(182, 82%, 86%, 1) 100%, hsla(182, 82%, 86%, 0) 70%);
@@ -22,11 +10,13 @@ body {
 	background: linear-gradient(to top right, hsla(224, 82%, 100%, 1) 0%, hsla(224, 82%, 100%, 0) 70%), 
 	linear-gradient(to bottom right, hsla(225, 80%, 96%, 1) 10%, hsla(225, 80%, 96%, 0) 80%), 
 	linear-gradient(to bottom left, hsla(213, 82%, 87%, 1) 10%, hsla(213, 82%, 87%, 0) 80%), 
-	linear-gradient(to top left, hsla(182, 82%, 86%, 1) 100%, hsla(182, 82%, 86%, 0) 70%);
+	linear-gradient(to top left, hsla(182, 82%, 86%, 1) 100%, hsla(182, 82%, 86%, 0) 70%);*/
+	padding-top: 40px;
+	background: url(images/bg1.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat no-repeat;
 	font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "微軟正黑體", "Microsoft JhengHei", "標楷體", sans-serif;
 }
 
@@ -36,32 +26,15 @@ button {
 
 #calendar h2 {
 	font-size: 2rem;
-	margin-top: -10px;
-}
-
-.container {
-	margin: auto;
-	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-	display: flex;
-	flex-direction: column;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-bottom: 40px;
-}
-
-.loaderBox {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	margin-top: -8px;
+	margin-left: -24px;
 }
 
 #calendar {
-	width: 100%;
+	width: 95%;
 	margin: auto;
 	padding-top: 40px;
-	/*margin-bottom: 25px;*/
+	padding-bottom: 50px;
 }
 
 .fc-unthemed .fc-today {
@@ -74,4 +47,26 @@ button {
 
 tr, td {
 	border-color: #CCC;
+}
+
+
+@media screen and (max-width: 768px) {
+  .fc-event {
+		font-size: .1em !important;
+  }
+
+  #calendar {
+  	width: 100%;
+  }
+
+  #calendar h2 {
+  	font-size: 0.85em;
+  	margin-top: -8px;
+  	margin-left: 3px;
+  	font-weight: bold;
+  }
+
+  .fc-day-grid-container.fc-scroller {
+  	height:  600px !important;
+  }
 }
